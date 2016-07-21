@@ -1,0 +1,57 @@
+* {
+  margin: 0 auto;
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+}
+
+body {
+  background-image: url('http://images.easyfreeclipart.com/160/white-stars-marquee-lights-over-a-blue-gradient-background-seamlessly--160838.jpg');
+  background-size: cover;;
+  background-repeat: no-repeat;
+}
+
+h1 {
+  margin-top: 120px;
+  color: white;
+}
+
+#form {
+  margin: 40px;
+}
+
+#form > * {
+  margin: 10px;
+  padding: 20px;
+}
+
+#movieDeets {
+  float: left;
+  width: 40%;
+  color: white;
+}
+
+#movieDeets, #poster {
+  margin-top: 10%;
+}
+
+h2, span {
+  font-weight: 700;
+}
+
+#movieDeets > * {
+  text-align: left;
+  color: white;
+}
+
+label {
+  color: white;
+}
+
+#poster {
+  float: right;
+  width: 40%;
+}
+
+#wrapper {
+  width: 40%
+}
