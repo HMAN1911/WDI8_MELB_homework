@@ -1,0 +1,31 @@
+<h2><%= @title%></h2>
+
+<div id="moviePoster">
+<img id="image" src="<%= @result['Poster'] %>" alt="">
+</div>
+
+<div id="movieListItems">
+<ul>
+  <li><span>Year:</span> <%= @result['Year'] %></li>
+  <li><span>Rating:</span> <%= @result['Rated'] %></li>
+  <li><span>Released:</span> <%= @result['Released'] %></li>
+  <li><span>Runtime:</span> <%= @result['Runtime'] %></li>
+  <li><span>Genre:</span> <%= @result['Genre']%></li>
+  <li><span>Director:</span> <%= @result['Director']%></li>
+  <li><span>Writers:</span> <%= @result['Writer']%></li>
+  <li><span>Plot:</span> <%= @result['Plot']%></li>
+  <li><span>Language:</span> <%= @result['Language']%></li>
+  <li><span>Country:</span> <%= @result['Country']%></li>
+  <li><span>Awards:</span> <%= @result['Awards']%></li>
+  <li><span>Metascore:</span> <%= @result['Metascore']%></li>
+  <li><span>imdbRating:</span> <%= @result['imdbRating']%></li>
+</ul>
+</div>
+
+<p>
+  <form action="/movie" method="get">
+  <input id="movieInput" type="text" id="movie" name="movie">
+
+  <button id="movieBtn">find my movie</button>
+</form>
+</p>
