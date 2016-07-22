@@ -73,7 +73,7 @@ users = {
 # 5. How would you return the smallest of Erik's favorite numbers?
   p users["Erik"][:favorite_numbers].min
 # 6. How would you return an array of Anil's favorite numbers that are also even?
-  puts users["Anil"][:favorite_numbers].select { |num| num.even? }
+  puts users["Anil"][ :favorite_numbers].select { |num| num.even? }
   # or magdas way
   puts users["Anil"][:favorite_numbers].map {|n| n if n % 2 == 0}.compact
 
