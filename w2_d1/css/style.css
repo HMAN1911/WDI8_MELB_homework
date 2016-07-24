@@ -1,0 +1,63 @@
+/*Used display: inherit to center header and width: 100% for
+footer but not totally sure reasoning of that (because aside
+floated?)
+*/
+body {
+  background-color: #D6D6D6;
+  margin: auto;
+}
+
+header {
+  background-image: url("../images/background.jpg");
+  height: 165px;
+  border-bottom: 100px solid #D6D6D6;
+}
+
+.logo {
+  margin: auto;
+  padding:15px;
+  display:inherit;
+}
+
+.dash {
+  border: 0 none;
+  border-top: 2px dashed #322f32;
+  background: none;
+  height:0;
+}
+
+article {
+  color: : #000000;
+  background-color: white;
+  width: 650px;
+  margin: auto;
+  padding: 20px 5px;
+}
+
+.highlight {
+  text-shadow: bold;
+  color: tomato;
+}
+
+.articleImg {
+  margin:auto;
+  padding: 20px;
+}
+
+aside {
+  display: inline-block;
+  float: right;
+  margin-right: 120px;
+  padding: 10px;
+  background-color: white;
+}
+
+.asideImg {
+  display:block;
+  padding: 10px;
+}
+
+footer {
+  text-align: center;
+  margin: 20px;
+}
