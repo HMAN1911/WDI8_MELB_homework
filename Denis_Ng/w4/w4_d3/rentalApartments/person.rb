@@ -6,16 +6,16 @@ class Person
 
   def initialize(name, age, gender)
 
+    # @'s' are properties
     @name = name
     @age = age
     @gender = gender
 
   end
 
-  # def to_string
-  #   # "HELLO THERE! THIS BUILDIN IS GOOD!: at #{@address} style: #{@style} has doorman: #{@has_doorman}"
-  # end
-
+  def to_s
+   "name is #{@name}, age is #{@age}, gender is #{@gender}"
+  end
 end
 
 binding.pry

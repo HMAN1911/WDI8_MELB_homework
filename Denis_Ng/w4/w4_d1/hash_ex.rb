@@ -21,7 +21,6 @@ D3. users["Denis"] = " "
 D4. users["Erik"][:favorite_numbers]
 D5. users["Erik"][:favorite_numbers].min
 D6. users["Anil"][:favorite_numbers].select.each_with_index { |i| i.even? }
-end
 
 D7.
 j = users["Jonathan"][:favorite_numbers]
