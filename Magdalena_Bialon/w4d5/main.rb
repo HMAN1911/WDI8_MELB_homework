@@ -14,28 +14,21 @@ puts "Would you like to see all menu options? (y/n)"
 answer = gets.chomp.downcase
 
 while answer == 'y'
-  puts "Here is the Menu: "
+  puts "Here are all Menu Options: "
   puts "\t1. Create Shelter"
   puts "\t2. Create animal"
-  # puts "\t0. Display created animals"
 
   puts "\t3. Create client"
-  puts "\t4. Client: add pets he already have"
-
+  puts "\t4. Client: add pets already owned by the client"
 
   puts "\t5. Shelter: add client - choose from created clients"
   puts "\t6. Shelter: add animal - choose from created animals"
 
-
   puts "\t7. Client: adopt animal from shelter - choose from shelter animals"
-  # puts "\t8. Shelter: remove animal / (provide name) choose from animals in shelter db"
 
+  puts "\t8. Client: give back adopted animal to shelter - choose from shelter animals"
 
-  puts "\t8. Client: give back animal he adopted shelter / (provide name) choose from shelter animals"
-  # puts "\t10. Shelter: add animal / (provide name) client gave back to shelter"
-
-
-  puts "\t9. Shelter: remove client from shelter db"
+  puts "\t9. Shelter: remove client from shelter database"
 
   puts "\t10. Shelter: display all animals"
   puts "\t11. Shelter: display all clients"
