@@ -10,7 +10,9 @@ end
 
 get '/display' do
 	
-	@searchResult = HTTParty.get("http://omdbapi.com/?t=#{params["movie_search"]}" )
+	search_string = params["movie_search"]
+
+	@searchResult = HTTParty.get("http://omdbapi.com/?t=#{search_string}") 
 	
 	
 
