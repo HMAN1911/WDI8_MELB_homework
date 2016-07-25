@@ -1,0 +1,146 @@
+body {
+	
+	background-color: tomato;
+	background-image: url("https://d1lfxha3ugu3d4.cloudfront.net/exhibitions/images/2015_Basquiat_EL135.37_4000W.jpg");
+	background-size: cover;
+
+}
+
+h1{
+	font-size: 4em;
+	font-family: 'Indie Flower', cursive;
+	color:tomato;
+	text-align:center;
+	margin: auto 0;
+	margin-top: 3px;
+
+}
+
+h2{
+		font-size: 2em;
+	font-family: 'Indie Flower', cursive;
+	color: purple;
+	text-align:center;
+	background-color: grey;
+	border-radius: 25px;
+	display:inline-block;
+	width: 50%;
+	margin-left: 24%;
+	margin-right: 24%;
+
+
+}
+
+
+.blog-title{
+font-size: 3em;
+color: green;
+
+}
+
+.blog-content{
+	border-radius: 25px;
+	border:solid 2px tomato ;
+	background-color: lightgrey;
+	display:inline-block;
+	width: 50%;
+	margin-left: 24%;
+	margin-right: 24%;
+	margin-top: 2%;
+
+}
+
+img{
+	width: 50%;
+	margin-left: 24%;
+	margin-right: 24%;
+
+}
+
+p{
+	font-size: 2em
+	width: 50%;
+	margin-left: 24%;
+	margin-right: 24%;
+	
+
+}
+
+//*******************************************
+	Nav Bar
+
+*/
+
+nav{
+
+}
+
+ul {
+    list-style-type: none;
+    font-size: 1em;
+    margin: 0;
+    padding: 0; 
+    overflow: hidden;
+    background-color: lightgrey;
+    margin-top: 5px;
+		margin-bottom: 5px;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: purple;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: pink;
+}
+
+.active {
+    background-color: grey;
+
+}
+
+//*******************************************
+ End of Nav Bar
+
+*/
+
+.notes{
+	background-color: grey;
+	height: 20px;
+	color:tomato;
+	font-size: 2em;
+}
+
+.donate-form{
+	font-size: 1.3em;
+	border:solid 2px black;
+	background-color: lightgrey;
+	padding:1%;
+	display:inline-block;
+	width: 50%;
+	margin-left: 24%;
+	margin-right: 24%
+	margin-top:3%;
+}
+
+.contact-f{
+	font-size: 1em;
+	width: 50%;
+	margin-left: 24%;
+	margin-right: 24%	
+}
+
+#btn{
+	width: 16%;
+	margin-left: 24%;
+	margin-top: 1%;
+}
+
