@@ -1,0 +1,12 @@
+<% @list_movies.each do |list| %>
+ <div class="list_item">
+
+   <a href="/movies_search?multiple_result=<%= list["Title"] %>"> <%= list["Title"] %> </a>
+   <p><%= list['Year'] %></p>
+   <a href = "/movies_search?multiple_result=<%= list["Title"]%>"><img src="<%= list['Poster'] %>" ></a>
+ </div>
+<% end %>
+
+
+ <p><a href = "/">go back to seach page</a></p>
+ <p><a href = "/about">go to about</a></p>

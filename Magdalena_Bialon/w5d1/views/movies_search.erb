@@ -1,0 +1,35 @@
+
+<div id = 'wrapper'>
+
+  <div id = 'header'>
+    <h3 id = 'title'><%=@result['Title']%></h3>
+    <img id = 'poster' src="<%=@result['Poster']%>">
+  </div>
+
+
+  <div id = 'description'>
+    <ul>
+      <li><span>Year: </span><%=@result["Year"]%></li>
+      <li><span>Rated:</span> <%=@result["Rated"]%></li>
+      <li><span>Released: </span><%=@result["Released"]%></li>
+      <li><span>Runtime: </span><%=@result["Runtime"]%></li>
+      <li><span>Genre: </span><%=@result["Genre"]%></li>
+      <li><span>Director: </span><%=@result["Director"]%></li>
+      <li><span>Writer: </span><%=@result["Writer"]%></li>
+      <li><span>Actors: </span><%=@result["Actors"]%></li>
+      <li><span>Plot: </span><%=@result["Plot"]%></li>
+      <li><span>Language: </span><%=@result["Language"]%></li>
+      <li><span>Country: </span><%=@result["Country"]%></li>
+      <li><span>Awards: </span><%=@result["Awards"]%></li>
+      <li><span>Metascore: </span><%=@result["Metascore"]%></li>
+      <li><span>imdbRating: </span><%=@result["imdbRating"]%></li>
+      <li><span>imdbVotes: </span><%=@result["imdbVotes"]%></li>
+      <li><span>imdbID: </span><%=@result["imdbID"]%></li>
+      <li><span>Type: </span><%=@result["Type"]%></li>
+      <li><span>Response: </span><%=@result["Response"]%></li>
+    </ul>
+  </div>
+
+</div>
+
+ <p><a href = "/">go back to seach page</a></p>
