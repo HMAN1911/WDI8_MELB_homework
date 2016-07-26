@@ -1,0 +1,18 @@
+<div class="wrapper">
+  <div class="teamOverviews">
+
+    <h2 class="teamOverviews"><%= @teams['school']%></h2>
+
+    <h3 class="teamOverviews"><%= @teams['location']%></h3>
+    <h3 class="teamOverviews"><%= @teams['mascot']%></h3>
+    <img src="<%= @teams['image_url']%>" alt="">
+
+    <a href="/sec/<%= @teams['id']%>/edit" class="teamOverviews">Edit</a>
+
+    <form action="/sec/<%=@teams['id']%>" method="post">
+    <input type="hidden" name="_method" value="delete">
+      <button class="teamOverviews">Delete</button>
+    </form>
+
+  </div>
+</div>
