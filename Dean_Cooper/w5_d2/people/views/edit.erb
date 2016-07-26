@@ -1,0 +1,26 @@
+<form action="/people/<%= @person['id'] %>" method="post">
+  <input type="hidden" name="_method" value="put">
+
+
+  <label for="">name</label>
+  <input type="text" name="name" value="<%= @person['name'] %>">
+
+  <label for="">Career</label>
+  <input type="text" name="career" value="<%= @person['career'] %>">
+
+
+  <label for="">Image url</label>
+  <input type="text" name="image_url" value="<%= @person['image_url'] %>">
+
+
+  <label for="">Partner Name</label>
+  <input type="text" name="partnername" value="<%= @person['partnername'] %>">
+
+
+  <label for="">Partner Image URL</label>
+  <input type="text" name="partner_url" value="<%= @person['partner_url'] %>">
+
+
+  <button>update</button>
+
+</form>

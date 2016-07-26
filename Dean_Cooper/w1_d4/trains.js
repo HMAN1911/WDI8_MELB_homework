@@ -1,26 +1,101 @@
 
-
 var alamein = ['Flinders Street', 'Richmond', 'East Richmond', 'Burnley', 'Hawthorn', 'Glenferrie']
 var glenWaverly = ['Flagstaff', 'Melbourne Central', 'Parliament', 'Richmond', 'Kooyong', 'Tooronga']
 var sandringham = ['Southern Cross', 'Richmond', 'South Yarra', 'Prahan', 'Windsor']
 
-var start = "Windsor";
-var end = "Burnley"
 var intersectingStation = "Richmond";
+var fromLocationSelect = document.getElementById("fromLocation");
+var toLocationSelect = document.getElementById("toLocation");
+var calculateRouteButton = document.getElementById("calculateRoute");
+var visualJourney = document.getElementById("visualJourney");
+var stopCountHeading = document.getElementsByTagName('h3')[0];
+var visualSeparator = '-->';
+
+addOption = function(selectbox, text, value) {
+    var optn = document.createElement("OPTION");
+    optn.text = text;
+    optn.value = value;
+    selectbox.options.add(optn);
+}
+
+
+function populateLocation(dropDownList)
+{
+  var option;
+
+  addOption(dropDownList,"****ALAMEIN****","****ALAMEIN****")
+  for(var index=0;index < alamein.length;index++) {
+    addOption(dropDownList,alamein[index],alamein[index])
+  }
+  addOption(dropDownList,"****GLEN WAVERLY****","****GLEN WAVERLY****")
+  for(var index=0;index < alamein.length;index++) {
+    addOption(dropDownList,glenWaverly[index],glenWaverly[index])
+  }
+  addOption(dropDownList,"****SANDRINGHAM****","****SANDRINGHAM****")
+  for(var index=0;index < alamein.length;index++) {
+    addOption(dropDownList,sandringham[index],sandringham[index])
+  }
+}
 
 function findStationIndex(station, line){
   var returnValue = line.indexOf(station);
-  //console.log('findStationIndex (station) ' + station + ',' + ' - ' + returnValue);
+  console.log('findStationIndex (station,retVal)',station,returnValue);
   return returnValue;
 }
 //debugger
 
+function outputMessage(message) {
+
+  var elem = document.querySelectorAll('ul li');
+  for (var i = 0;i<elem.length;i++){
+    visualJourney.removeChild(elem[i]);
+  }
+  var newLi;
+  newLi = document.createElement('li');
+  newLi.innerHTML = message;
+  visualJourney.appendChild(newLi);
+}
+
+function outputJourney(stops) {
+
+  var elem = document.querySelectorAll('ul li');
+
+  for (var i = 0;i<elem.length;i++){
+    visualJourney.removeChild(elem[i]);
+  }
+
+
+  var newLi;
+  for (var index = 0;index < stops.length;index++) {
+    newLi = document.createElement('li');
+    newLi.innerHTML = stops[index] + '    ' + visualSeparator;
+    visualJourney.appendChild(newLi);
+
+  }
+stopCountHeading.innerHTML = stops.length + ' total stop(s)';
+}
+
+function moveToStationByIndex(indexSource, indexDest, line){
+  //var indexSource= findStationIndex(sourceStation, line);
+  //var indexDest = findStationIndex(destinationStation, line);
+  console.log('moveToStation (sourceStation, destinationStation): ',indexSource,indexDest)
+
+  var finalArray;
+
+  if (indexSource > indexDest){
+      finalArray = line.slice(indexDest,indexSource + 1).reverse();
+  }
+  else {
+      finalArray = line.slice(indexSource,indexDest + 1)
+  }
+  return finalArray;
+}
 
 
 function moveToStation(sourceStation, destinationStation, line){
   var indexSource= findStationIndex(sourceStation, line);
   var indexDest = findStationIndex(destinationStation, line);
-  console.log('moveToStation (sourceStation, destinationStation): ' +  indexSource + ' '+ indexDest)
+  console.log('moveToStation (sourceStation, destinationStation): ',indexSource,indexDest)
 
   var finalArray;
 
@@ -49,52 +124,90 @@ function findForeignStationLine(station) {
     var indexOfRichmond = findStationIndex("Richmond", line);
     var indexOfStation = findStationIndex(station, line);
 
-    console.log('returnFinalForeignLine (indexOfRichmond, indexOfStation): ' +  indexOfRichmond + ' '+ indexOfStation)
+    //console.log('returnFinalForeignLine (indexOfRichmond, indexOfStation): ',indexOfRichmond,indexOfStation)
     var finalArray;
-    console.log('returnFinalForeignLine (orig array): ' +  line)
+    //console.log('returnFinalForeignLine (orig array): ' +  line)
     if (indexOfRichmond > indexOfStation){
-      console.log('a');
+      //console.log('a');
         finalArray = line.slice(indexOfStation,indexOfRichmond + 1).reverse();
     }
     else {
-      console.log('b');
+      //console.log('b');
         finalArray = line.slice(indexOfRichmond,indexOfStation + 1)
     }
-    console.log('returnFinalForeignLine (finalArray array): ' +  finalArray)
+    //console.log('returnFinalForeignLine (finalArray array): ',finalArray)
     return finalArray;
   }
+
 
 //name of line - value is the lines (array);
 
 //check if we need to switch lines or not.
 //we can do this by checking which line we are on now and which line we need to go onto
 
-console.log('(Start / End) - ' + start + ', ' + end );
-var currentLine = findForeignStationLine(start);
-var destinationLine = findForeignStationLine(end);
-var finalJourney;
+calculateRouteButton.addEventListener('click', calculateRoute);
 
-if ((currentLine == destinationLine)||(end == intersectingStation))
-{
-  console.log('Start and end are on the same line. lets just go there');
-  finalJourney = moveToStation(start, end, currentLine);
+  populateLocation(fromLocationSelect);
+  populateLocation(toLocationSelect);
+
+function calculateRoute() {
+  var startStation = fromLocationSelect.value;
+  var endStation = toLocationSelect.value
+
+  var currentLine = findForeignStationLine(startStation);
+  var destinationLine = findForeignStationLine(endStation);
+  var finalJourney = [];
+
+if (startStation === endStation) {
+  outputMessage('Start and End station are the same')
 }
-else {
-  console.log('we need to switch lines. work out how to get to richmomd first, but dont include it here. so find the station before');
+  else if ((currentLine == destinationLine)||(endStation == intersectingStation))
+  {
+    console.log('Start and end are on the same line. lets just go there');
+    finalJourney = moveToStation(startStation, endStation, currentLine);
+    //console.log(finalJourney);
+    outputJourney(finalJourney);
+  }
+  else {
+    console.log('we need to switch lines. work out how to get to richmomd first, but dont include it here. so find the station before');
 
-  //stop at the one before richmond.
-  var oneBeforeRichmondIndex = findStationIndex(intersectingStation, currentLine);
-  var oneBeforeRichmond = currentLine[oneBeforeRichmondIndex-1];
-  console.log(oneBeforeRichmond);
-  finalJourney = moveToStation(start, oneBeforeRichmond, currentLine);
-  console.log(finalJourney);
-  console.log('   ');
-  console.log('now continue our journey');
-  var finalJourney2 = returnFinalForeignLine(end, destinationLine);
+    //stop at the one before richmond.
+    var richmondIndex = findStationIndex(intersectingStation, currentLine);
+    var startIndex = findStationIndex(startStation, currentLine);
+    var stopBeforeRichmondIndex = 0;
 
+    if (startIndex < richmondIndex){
+      //need to travel FORWARD to get to richmond
+      stopBeforeRichmondIndex = richmondIndex-1
+      finalJourney = moveToStationByIndex(startIndex, richmondIndex-1, currentLine);
+    }
+    else if (startIndex > richmondIndex){
+      //travel back
+      stopBeforeRichmondIndex = richmondIndex+1
+      finalJourney = moveToStationByIndex(startIndex, richmondIndex+1, currentLine);
+    }
+    else {
+      //we are at richmond already.
+    }
 
-  console.log(finalJourney2);
+    console.log(finalJourney);
+    var finalJourney2 = returnFinalForeignLine(endStation, destinationLine);
+
+    var finalTotalJourney = finalJourney.concat(finalJourney2);
+
+    outputJourney(finalTotalJourney);
+    //console.log(finalTotalJourney);
+  }
 }
+
+
+
+
+/* doesnt work
+start - Burnleys
+end - windsor
+
+
 
 
 
