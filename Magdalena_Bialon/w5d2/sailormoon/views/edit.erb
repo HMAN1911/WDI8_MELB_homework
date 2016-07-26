@@ -1,0 +1,30 @@
+<div class="wrapper">
+  <div class="eacHaracter">
+
+    <form action="/characters/<%= @character['id'] %>" method = "post">
+      <input type="hidden" name="_method" value="put">
+
+      <label for="">name</label>
+      <input type="text" name = "name" value ="<%= @character['name']%>">
+
+      <label for="">image url</label>
+      <input type="text" name = "img_url" value = "<%= @character['img_url']%>">
+
+
+      <label for="">nickname </label>
+      <input type="text" placeholder = "nickname"  name = "nickname"   value = "<%= @character['nickname']%>">
+
+      <label for="">universe </label>
+      <input type="text" placeholder = "universe"   name = "universe"  value = "<%= @character['universe']%>">
+
+      <label for="">soldier </label>
+      <input type="text" placeholder = "soldier"  name = "soldier"   value = "<%= @character['soldier']%>">
+
+
+      <button id = "update" >update</button>
+    </form>
+
+  </div>
+</div>
+
+   <h2><a href = "/">main page</a></h2>

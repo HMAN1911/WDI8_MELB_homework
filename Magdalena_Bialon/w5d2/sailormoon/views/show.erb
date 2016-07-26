@@ -1,0 +1,23 @@
+<h1>CHARACTER</h1>
+
+<h2>  <%= @character["name"] %> </h2>
+
+<img src = " <%= @character["img_url"] %> ">
+
+<div id = "desc">
+<h3>  <%= @character["nickname"] %> </h3>
+<h3>  <%= @character["universe"] %> </h3>
+<h3>  <%= @character["soldier"] %> </h3>
+</div>
+
+<a id = "edit"  href="/characters/<%= @character["id"] %>/edit"> edit </a>
+
+
+
+<form action="/characters/<%= @character["id"] %>" method = "post">
+  <input type="hidden" name = "_method" value ="delete">
+  <button id = "delete">delete</button>
+</form>
+
+
+ <h2><a href = "/">main page</a></h2>
