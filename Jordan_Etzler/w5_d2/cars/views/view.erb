@@ -1,0 +1,23 @@
+<div class="imageInfo">
+  <img src="<%= @cars['image'] %>" alt="">
+  <a href="/">
+    <img src="/images/house-icon.png" alt="">
+  </a>
+</div>
+
+<div class="info">
+  <div class="infoHolder">
+    <h1><%= @cars['brand'] + ' ' + @cars['model'] %></h1>
+    <h3><%= @cars['engine_power'] %></h3>
+  </div>
+
+  <div class="options">
+    <a href="/cars/<%= @cars['id'] %>/edit ">Edit</a>
+    <p>|</p>
+    <form action="/cars/<%= @cars['id'] %>" method="post">
+      <input type="hidden" name="_method" value="delete">
+      <button>Delete</button>
+    </form>
+  </div>
+
+</div>

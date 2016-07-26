@@ -1,0 +1,11 @@
+
+<% @list_movies.each do |list| %>
+
+  <a href="/about?title=<%= list['Title'].gsub(/\s+/, "+").strip.downcase %>">
+    <div class="list_item">
+      <p><%= list['Title'] %></p>
+      <p><%= list['Year'] %></p>
+      <img src="<%= list['Poster'] %>" alt="">
+    </div>
+  </a>
+<% end %>
