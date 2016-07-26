@@ -1,0 +1,18 @@
+<h1>Good women hunting</h1>
+
+
+
+<img src="<%= @person['image_url'] %>"></img>
+<img src="<%= @person['partner_url'] %>"></img>
+<h2><%= @person['name'] %></h2>
+<h2><%= @person['partnername'] %></h2>
+<h2><%= @person['career'] %></h2>
+
+<a href="/people/<%= @person['id'] %>/edit">edit</a>
+
+<button>
+  <form action="/people/<%= @person['id'] %>" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <button>delete</button>
+  </form>
+</button>
