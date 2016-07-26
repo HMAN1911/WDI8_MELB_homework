@@ -1,0 +1,8 @@
+<h1>Walk on ! </h1>
+<a href="/guitars/new">add a new explosion</a>
+
+<% @guitars.each do |guitar| %>
+  <h2><%= guitar['name'] %></h2>
+  <img src="<%= guitar['img_url'] %>">
+  <a href="/guitars/<%= guitar['id'] %>">details</a>
+<% end %>

@@ -1,0 +1,25 @@
+img {
+  width: 40%;
+	opacity: 0.7;
+}
+
+body{
+	background-image: url("https://images.alphacoders.com/115/115061.jpg");
+
+}
+
+h1{
+		font-family: 'Abril Fatface', cursive;
+		font-size: 6em;
+		color:darkred;
+}
+
+h2{
+		font-family: 'Abril Fatface', cursive;
+		font-size: 2em;
+		color:darkgrey;
+}
+
+.content{
+	text-align: center;
+}

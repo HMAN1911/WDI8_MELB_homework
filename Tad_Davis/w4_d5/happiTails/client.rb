@@ -7,8 +7,7 @@ class Client
 		@name = name
 		@age = age
 		@children = children
-		@pets = pets
-		@shelter = {}
+		@pets = []
 
 	end
 

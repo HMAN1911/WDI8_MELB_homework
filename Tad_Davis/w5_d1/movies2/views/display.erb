@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<div id="content">
+	
+
+<span id="info">
+
+<p>Title: <%= @searchResult%></p>
+
+
+<!--
+<p>Title: <%= @searchResult["Title"] %></p>
+<p>Year: <%= @searchResult['Year'] %></p>
+<p>Rated: <%= @searchResult['Rated'] %></p>
+<p>Released: <%= @searchResult['Released'] %></p>
+<p>Actors: <%= @searchResult['Actors'] %></p>
+<p>Plot: <%= @searchResult['Plot'] %></p>
+<p>Language: <%= @searchResult['Language'] %></p>
+<p>Awards: <%= @searchResult['Awards'] %></p>
+<p>Rating: <%= @searchResult['imdbRating'] %></p>
+<p>Type: <%= @searchResult['Type'] %></p>
+
+-->
+
+</span>
+<a href="/">back</a>
+<span id="poster"><img src="<%= @searchResult['Poster'] %>" alt=""></span>
+
+
+</div>
+
+</body>
+</html>
+
+
+<!-- Display movie -->

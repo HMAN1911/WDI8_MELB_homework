@@ -1,0 +1,12 @@
+<!-- the add new name and new picture page  -->
+
+<form action="/guitars/<%= @guitar['id'] %>" method="post">
+  <input type="hidden" name="_method" value="put">
+  <label for="">name</label>
+  <input type="text" name="name" value="<%= @guitar['name'] %>">
+
+  <label for="">img url</label>
+  <input type="text" name="img_url" value="<%= @guitar['img_url'] %>">
+
+  <button>update</button>
+</form>
