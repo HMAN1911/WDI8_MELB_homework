@@ -1,0 +1,12 @@
+<h1>NCAA Football: SEC Teams</h1>
+<div class="wrapper">
+<a href="/sec/new">Add your Team!</a>
+
+<% @teams.each do |team|  %>
+  <div class="teamOverviews">
+    <h2 class="teamOverviews"><%= team["school"] %></h2>
+    <img src="<%=team["image_url"]%>" alt="">
+    <a href="/sec/<%=team['id']%>" class="teamOverviews">Details</a>
+  </div>
+<%end%>
+</div>

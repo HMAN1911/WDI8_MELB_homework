@@ -1,0 +1,22 @@
+<div class="wrapper">
+  <div class=TeamOverviews>
+
+    <form action="/sec/<%=@teams['id']%>" method="post">
+      <input type="hidden" name="_method" value="put">
+      <label for="">School</label>
+      <input type="text" name="school" value="<%= @teams['school']%>">
+
+      <label for="">College Town</label>
+      <input type="text" name="location" value="<%= @teams['location']%>">
+
+      <label for="">Mascot</label>
+      <input type="text" name="mascot" value="<%= @teams['mascot']%>">
+
+      <label for="">Logo</label>
+      <input type="text" name="image_url" value="<%= @teams['image_url']%>">
+
+      <button>Update</button>
+
+    </form>
+  </div>
+</div>

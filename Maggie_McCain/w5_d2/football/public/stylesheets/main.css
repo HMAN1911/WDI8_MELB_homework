@@ -1,0 +1,44 @@
+* {
+  margin: 0 auto;
+  text-align: center;
+}
+
+body {
+  background-color: #5f5e5f;
+}
+
+img {
+  width: 100px;
+}
+
+.teamOverviews > * {
+  display:block;
+  margin: 2px auto;
+}
+
+h2 {
+  margin: 5px auto;
+}
+
+.teamOverviews {
+  margin: 10px auto;
+  background-color: white;
+}
+
+.wrapper {
+  width: 40%;
+}
+
+form > * {
+  display: block;
+  margin-top: 2px;
+}
+
+a {
+  margin: 10px;
+}
+
+a:hover {
+  background-color: gray;
+  color: #940300;
+}
