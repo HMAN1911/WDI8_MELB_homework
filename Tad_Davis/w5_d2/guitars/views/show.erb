@@ -1,0 +1,12 @@
+<!-- This is the show single item to delete it page-->
+
+<!-- go to the guitars id and show a single guitar-->
+<h1><%= @guitar['name'] %></h1>
+<img src="<%= @guitar['img_url'] %>" alt="">
+
+<a href="/guitars/<%= @guitar['id'] %>/edit">edit</a>
+
+<form action="/guitars/<%= @guitar['id'] %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <button>delete</button>
+</form>

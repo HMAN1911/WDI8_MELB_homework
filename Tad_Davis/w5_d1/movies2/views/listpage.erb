@@ -1,0 +1,11 @@
+ <a href="/">back</a>
+
+<div id="movie">
+<% @search.each do |movie| %>
+<a href="/display"><p><%= movie["Title"] %></p></a>
+<span id="poster"><img src="<%= movie["Poster"] %>" alt=""></span>
+
+<% end %>
+</div>
+
+

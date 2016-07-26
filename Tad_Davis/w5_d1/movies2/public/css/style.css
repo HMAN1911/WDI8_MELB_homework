@@ -1,0 +1,47 @@
+body {
+	background-image: url('http://www.loripalminteri.com/wp-content/uploads/2014/04/supersquirrel___the_last_squirrel_of_krypton_by_shikharsrivastava-d5c9oxb.jpg')
+}
+
+#info{
+	background-color: #b3ffe0;
+	margin-top: 10px;
+	color: red ;
+	display: inline-block;
+	width: 400px;	
+	opacity: 0.6;
+
+}
+p{
+font-size: 1.5em;
+
+}
+
+a:hover{
+	color:black;
+
+}
+
+a{
+	color:darkred;
+	float:left;
+}
+
+
+h1{
+	font-family: 'Orbitron', sans-serif;
+}
+#poster{
+	float:right;
+	display:inline-block;
+	padding-right: 10%;
+	width: 30%;
+}
+
+#movie{
+	float:left;
+	display:inline-block;
+	padding-right: 10%;
+	width: 30%;
+	background-color: pink;	
+
+}

@@ -4,6 +4,9 @@ require './shelter'
 require 'pry'
 
 
+# make a shelter
+happitails = Shelter.new
+
 #people
 harrison = Client.new("harrison",12,"","")
 tyler = Client.new("tyler",34,"jane jimmy","frog dog")
@@ -16,60 +19,87 @@ fuzzy= Animal.new("fuzzy",6,"m","cat","toy1 toy2")
 stinky = Animal.new("stinky",4,"f","cat","mousetoy fluffBall")
 
 ##
+# put animal in client 
+
+
+
+
+##
 ## The Prompt for the new client 
 ##
+
+
+puts 'welcome to happitails'
+puts 'register new animal? y/n'
+choice = gets.chomp 
+
+while choice == 'y'
+
+	puts 'register new animal'
+
+	puts 'animal name:'
+	animal_name = gets.chomp
+
+	puts 'animal age:'
+	age = gets.chomp
+
+	puts 'animal gender:'
+	gender = gets.chomp
+
+	puts 'animal species:'
+	species = gets.chomp
+
+
+	puts 'animal toys:'
+	toys = gets.chomp
+
+
+	animal = Animal.new(animal_name, age, gender, species, toys)
+
+
+	happitails.add_animals(animal)
+
+	puts 'register new animal? y/n'
+	choice = gets.chomp 
+end
+
+######################################
+## => CLIENTS 
+##
+#####################################
+
+puts 'welcome to happitails'
+puts 'register new client? y/n'
+clientchoice = gets.chomp 
+
+while clientchoice == 'y'
+
+	puts 'register new client'
+
+	puts 'client name:'
+	client_name = gets.chomp
+
+	puts 'client age:'
+	client_age = gets.chomp
+
+	puts 'client children:'
+	children = gets.chomp
+
+	puts 'client pets:'
+	client_pet = gets.chomp
+
+
+	client = Client.new(client_name, client_age, children, client_pet)
+
+
+	happitails.add_clients(client)
+
+	puts 'register new client? y/n'
+	clientchoice = gets.chomp 
+end
 
 
 
 binding.pry
 
-=begin
-puts "whats your name"
-client = gets.chomp
 
-client_name.push(client)
-
-
-=end
-
-
-=begin
-
-puts "Welcome to the animal shelter"
-puts "Would you like to create a client?(y/n)"
-create_client = gets.chomp
-
-aray = []
-
-if create_client == "y"
-	puts "whats your name"
-	client_name = gets.chomp
-	puts "whats your age"
-	client_age = gets.chomp	
-	puts "do you have children (y/n)"
-	have_children = gets.chomp
-	if have_children == 'y'
-		
-		puts "what are their names"
-		children_names = gets.chomp 
-
-
-	else
-		puts "ok no kids"
-
-end
-
-		puts "list your pets"
-		pets = gets.chomp
-		puts "ok great thats all the information we need"
-
-else
-	puts "no client thats ok"
-
-end
-
-
-puts " you are  #{client_name}  your age is #{client_age} 
-your children are #{children_names} your pets are #{pets}"
-
-=end
