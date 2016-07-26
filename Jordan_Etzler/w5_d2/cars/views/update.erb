@@ -1,0 +1,25 @@
+
+
+<div class="imageInfo">
+  <img src="<%= @cars['image'] %>" alt="">
+</div>
+
+<div class="info">
+
+  <form action="/cars/<%= @cars['id'] %>" method="post">
+    <input type="hidden" name="_method" value="put">
+
+    <h1>Edit</h1>
+
+    <input type="text" name="brand" value="<%= @cars['brand'] %>">
+
+    <input type="text" name="model" value="<%= @cars['model'] %>">
+
+    <input type="text" name="engine_power" value="<%= @cars['engine_power'] %>">
+
+    <input type="text" name="image" value="<%= @cars['image'] %>">
+
+    <button>Update</button>
+  </form>
+
+</div>

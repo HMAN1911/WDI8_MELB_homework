@@ -1,0 +1,21 @@
+
+<div id="newCar">
+  <img src="/images/logo.png" alt="">
+  <form action="/cars" method="post" id="newCarForm">
+    <div id="inputHolder">
+      <input type="text" name="brand" placeholder="Brand">
+      <input type="text" name="model" placeholder="Model">
+      <input type="text" name="engine_power" placeholder="Engine Horsepower">
+      <input type="text" name="image" placeholder="Image URL of vehicle">
+    </div>
+    <button>+</button>
+  </form>
+</div>
+
+<% @cars.each do |car| %>
+  <a href="/cars/<%= car['id'] %>">
+    <div class="carBackground" id="<%= car['brand'] %>">
+      <img src="<%= car['image'] %>" alt="">
+    </div>
+  </a>
+<% end %>
