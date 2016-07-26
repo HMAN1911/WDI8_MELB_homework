@@ -1,0 +1,17 @@
+<h1>SAILORMOON</h1>
+
+
+<a id = "add" href="/characters/new">Add more characters</a>
+
+
+<% @characters.each  do |character| %>
+
+  <h2> <a href="/characters/<%= character["id"] %>"> <%= character["name"] %> </a> </h2>
+
+  <a href="/characters/<%= character["id"] %>"> <img src = " <%= character["img_url"] %> "> </a>
+
+   <h3>  <%= character["nickname"] %> </h3>
+   <h3>  <%= character["universe"] %> </h3>
+   <h3>  <%= character["soldier"] %> </h3>
+
+<% end %>
