@@ -1,0 +1,14 @@
+<form action="/kings/<%= @king['id'] %>" method="post">
+  <input type="hidden" name="_method" value="put">
+  <label for="">name</label>
+  <input type="text" name="name" value="<%= @king['name']%>">
+
+  <label for="">reign</label>
+  <input type="text" name="reign" value="<%= @king['reign']%>">
+
+  <label for="">image url</label>
+  <input type="text" name="image_url" value="<%= @king['image_url']%>">
+  <div id="updateBtn">
+    <button>update</button>
+  </div>
+</form>

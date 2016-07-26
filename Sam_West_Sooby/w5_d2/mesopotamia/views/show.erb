@@ -1,0 +1,16 @@
+<h2><%= @king['name'] %></h1>
+<img src="<%= @king['image_url'] %>" alt="">
+
+<div id="editClick">
+  <a href="/kings/<%= @king['id'] %>/edit">edit</a>
+</div>
+
+
+<form action="/kings/<%= @king['id'] %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <button>delete</button>
+</form>
+
+<form action="/">
+  <button>home page</button>
+</form>
