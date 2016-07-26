@@ -1,0 +1,14 @@
+<h1>Edit Dinosaur</h1>
+
+<a href="/">Home</a>
+
+<form action="/dinosaurs/<%= @dinosaurs['id']%>" method="post">
+  <input type="hidden" name="_method" value="put">
+  <label for="">genera</label>
+  <input type="text" name="genera" value="<%=@dinosaurs["genera"]%>">
+
+  <label for="">img url</label>
+  <input type="text" name="image_url" value="<%=@dinosaurs["image_url"]%>">
+
+  <button>update</button>
+</form>

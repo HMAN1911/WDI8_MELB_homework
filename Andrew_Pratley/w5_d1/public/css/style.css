@@ -1,0 +1,86 @@
+body {
+  background: url("bat.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#title {
+  margin: 1em 0 0 1em;
+}
+
+h3 {
+  margin: 1em 0 0 1.7em;
+}
+
+* {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+label {
+  font-size: 1.5em;
+}
+
+button, input {
+    background-color: black;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+input {
+  margin: 2em 0em 1em 2em;
+}
+
+.left {
+  float: left;
+  width: 400px;
+}
+
+.right {
+  float: right;
+  right: 0px;
+  width: 300px;
+  border: 15px solid black;
+  padding: 10px;
+}
+
+p {
+  margin: .7em 0 0 2em;
+}
+
+.not_exist {
+  font-size: 1.2em;
+  margin-left: 1.7em;
+}
+
+a {
+  color: black;
+  margin: 2em 0 0 2em;
+}
+
+.thumb {
+  width: 10em;
+  margin: 0 auto;
+}
+
+.selection {
+  margin: 2em 0 0 0;
+  display: inline-block;
+  width: 15em;
+  color: white;
+}
+
+.sel-text {
+  margin: .5em auto .5em auto;
+}
+
+form {
+  display: inline-block;
+  width: 15em;
+}

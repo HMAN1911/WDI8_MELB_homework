@@ -1,0 +1,14 @@
+
+  <% @titles.each do |movie| %>
+
+  <form action=<%="/movie"%> method="get">
+    <a href="/movie">
+      <div class="selection">
+        <p class="sel-text">Title: <%= movie['Title'] %></p>
+        <p class="sel-text">Year: <%= movie['Year'] %></p>
+        <img class="thumb" src="<%= movie['Poster'] %>" alt="poster">
+      </div>
+    </a>
+  </form>
+
+  <% end %>

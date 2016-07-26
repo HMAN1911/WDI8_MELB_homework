@@ -1,0 +1,13 @@
+<h1>Dinosaur Details</h1>
+
+<a href="/">Home</a>
+
+<p><%= @dinosaurs['genera'] %></p>
+<img src="<%=@dinosaurs['image_url']%>" alt="">
+
+<a href="/dinosaurs/<%= @dinosaurs['id']%>/edit">edit</a>
+
+<form action="/dinosaurs/<%= @dinosaurs['id']%>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <button>delete</button>
+</form>
