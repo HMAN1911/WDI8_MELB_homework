@@ -1,5 +1,6 @@
 sinatra new sailormoon -va - CREATES FOLDER WITH TEMPLATES ;)
--- created new files: edit.erb new.erb show.erb 
+-- created new files: edit.erb new.erb show.erb
+-- 
 
 
 

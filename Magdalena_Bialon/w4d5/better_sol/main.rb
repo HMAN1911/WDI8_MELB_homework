@@ -82,6 +82,6 @@ loop do
       puts $shelter[:clients]
     end
   else
-    puts 'Sorry we don\'t recognize your request.  Please try again...'
+    puts 'Sorry, what is your request...?  Please try again'
   end
 end

@@ -11,14 +11,11 @@ class Client
     @pets = {}
   end
 
-  # def pets
-  #   puts @pets
-  # end
 
   def add_pet(animal)
     key = animal.name
     @pets[key] = animal
-    puts "YAY FREEDOM! " + name + " has adopted " + animal.name
+    puts  name + " has adopted " + animal.name
   end
 
   def remove_pet(animal)
