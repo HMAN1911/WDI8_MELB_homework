@@ -1,0 +1,10 @@
+<h1>Dinosaurs</h1>
+
+<a href="/dinosaurs/new">new dinosaurs</a>
+
+<% @dinosaurs.each do |dinosaurs| %>
+  <a href="/dinosaurs/<%= dinosaurs['id']%>">
+    <h2><%= dinosaurs['genera'] %></h2>
+    <img src="<%=dinosaurs['image_url']%>" alt="">
+  </a>
+<% end %>

@@ -9,5 +9,4 @@ person = Person.new
 
 building.apartments.push(apartment)
 apartment.renters.push(person)
-
 binding.pry

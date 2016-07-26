@@ -1,0 +1,14 @@
+
+  <form action=<%="/list"%> method="get">
+
+<%="That movie does not exist in our database" if @res == "False"%>
+
+    <label for="movie_name"></label>
+    <input type="text" id="movie_name" name="movie_name">
+    <button>Search</button>
+
+  </form>
+
+  <h3>Movie information dedicated to movie lovers everywhere</h3>
+
+  <a href="/about">About</a>
