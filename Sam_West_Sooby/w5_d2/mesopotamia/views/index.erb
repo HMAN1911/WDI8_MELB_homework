@@ -1,0 +1,15 @@
+<div>
+  <a href="/kings/new">submit a king</a>
+
+  <div id="kingList">
+    <% @kings.each do |king| %> 
+       <h3>Name: <%= king['name'] %></h3>
+       <h3>Years as King: <%= king['reign'] %></h3>
+       <img src="<%= king['image_url'] %>" alt="">
+       <div id="kingDetails">
+        <a href="/kings/<%=king['id']%>">details</a>
+        <% end %>
+        </div>
+  </div>
+
+</div>

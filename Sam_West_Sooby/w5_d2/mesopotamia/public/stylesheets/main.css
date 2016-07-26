@@ -1,0 +1,18 @@
+body {
+  text-align: center;
+}
+
+img {
+  width: 100px;
+  display: inline-block;
+}
+
+h2 {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+h3 {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
