@@ -1,0 +1,11 @@
+<h1>goodfoodhunting</h1>
+
+<!-- adding the route so that when users intend to add a new dish it takes them to that page -->
+<a href="/dishes/new">add new dish</a>
+<% @dishes.each do |dish| %>
+  <!-- = is like a puts function -->
+  <h2><%= dish['name'] %></h2>
+  <!-- 'image url' taken from sql code we already keyed in earlier and has to be in an img tag -->
+  <img src="<%= dish['image_url'] %>" alt="">
+  <a href= "/dishes/<%= dish['id'] %>">details</a>
+<% end %>
