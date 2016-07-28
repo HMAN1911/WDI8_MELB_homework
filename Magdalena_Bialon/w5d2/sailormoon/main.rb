@@ -14,7 +14,7 @@ end
 
 get '/' do
   @characters = run_sql('select * from characters;')
-erb :index
+  erb :index
 end
 
 
