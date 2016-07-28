@@ -1,0 +1,11 @@
+
+
+<div class="resultList">
+<%@search_returns.each do |movie| %>
+  <div class = "results">
+    <a href="/about?imdbid=<%= movie["imdbID"] %>"> <%= movie["Title"] %> </a>
+    <img src="<%= movie["Poster"]%>" alt="">
+  </div>
+<% end %>
+
+</div>

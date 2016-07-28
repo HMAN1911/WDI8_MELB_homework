@@ -1,0 +1,73 @@
+* {
+  margin: 0 auto;
+  font-family: 'Raleway', sans-serif;
+}
+
+body {
+  background-image: url('http://il6.picdn.net/shutterstock/videos/10196645/thumb/9.jpg');
+  background-size: cover;
+  text-align: center;
+}
+
+h1 {
+  margin: 3% auto;
+  color: white;
+}
+
+#form img {
+  margin: 2%;
+  width: 50%;
+}
+
+#movieDeets > * {
+  float: left;
+  color: white;
+}
+
+#movieDeets {
+  width: 40%;
+}
+
+.results {
+  margin: 10px;
+  width: 20%;
+}
+
+.results img {
+  width: 100%;
+}
+
+.results a:hover {
+  font-size: 20px;
+  font-weight: bolder;
+  color: #A61921;
+}
+
+#movieSummary, #poster {
+  margin-top: 10%;
+  width: 45%;
+  vertical-align: top;
+  text-align:left !important;
+}
+
+h2, span {
+  font-weight: 700;
+  color: white;
+}
+
+label {
+  color: white;
+}
+
+#poster {
+  float: right;
+  width: 40%;
+}
+
+.resultList {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: flex-start;
+}

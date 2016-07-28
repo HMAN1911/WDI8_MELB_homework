@@ -1,0 +1,19 @@
+
+<div id="movieDeets">
+  <div id="movieSummary">
+    <h2> <%= @movie.title %> </h2>
+    <br>
+    <!-- <p> <span>Year released: </span><%= @movie_year %> </p> -->
+    <br>
+    <p> <span>Length: </span><%= @movie.length%> </p>
+    <br>
+    <p> <span>Genre: </span><%= @movie.genre%> </p>
+    <br>
+    <p> <span>Starring: </span><%= @movie.stars%> </p>
+    <br>
+    <p> <%= @movie.plot%> </p>
+  </div>
+  <div id="poster">
+      <img src="<%= @movie.poster %> " alt="movie poster">
+  </div>
+</div>
