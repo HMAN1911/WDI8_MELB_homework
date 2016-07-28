@@ -1,0 +1,6 @@
+
+<% @search.each do |movie| %>
+
+<p><a href="/display?title=<%= movie["Title"].downcase %>"><%=movie["Title"] %></p>
+
+<% end %>
