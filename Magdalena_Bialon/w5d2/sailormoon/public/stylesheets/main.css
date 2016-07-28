@@ -119,3 +119,11 @@ input {
   text-align: center;
   margin-right: 15px;
 }
+
+
+.list_char {
+  display: inline-block;
+  width: 30%;
+  vertical-align: top;
+
+}

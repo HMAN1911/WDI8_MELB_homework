@@ -5,13 +5,13 @@
 
 
 <% @characters.each  do |character| %>
+ <div class="list_char">
+   <h2> <a href="/characters/<%= character["id"] %>"> <%= character["name"] %> </a> </h2>
 
-  <h2> <a href="/characters/<%= character["id"] %>"> <%= character["name"] %> </a> </h2>
+   <a href="/characters/<%= character["id"] %>"> <img src = " <%= character["img_url"] %> "> </a>
 
-  <a href="/characters/<%= character["id"] %>"> <img src = " <%= character["img_url"] %> "> </a>
-
-   <h3>  <%= character["nickname"] %> </h3>
-   <h3>  <%= character["universe"] %> </h3>
-   <h3>  <%= character["soldier"] %> </h3>
-
+    <h3>  <%= character["nickname"] %> </h3>
+    <h3>  <%= character["universe"] %> </h3>
+    <h3>  <%= character["soldier"] %> </h3>
+ </div>
 <% end %>

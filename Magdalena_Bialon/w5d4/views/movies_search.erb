@@ -1,0 +1,25 @@
+
+<div id = 'wrapper'>
+
+  <div id = 'header'>
+    <h3 id = 'title'><%=@res_db.title%></h3>
+    <img id = 'poster' src="<%=@res_db.poster%>">
+  </div>
+
+
+  <div id = 'description'>
+    <ul>
+      <li><span>Year: </span><%=@res_db.year%></li>
+      <li><span>Released: </span><%= @res_db.released%></li>
+      <li><span>Runtime: </span><%=@res_db.runtime%></li>
+      <li><span>Genre: </span><%=@res_db.genre%></li>
+      <li><span>Director: </span><%=@res_db.director%></li>
+      <li><span>Plot: </span><%=@res_db.plot%></li>
+      <li><span>Country: </span><%=@res_db.country%></li>
+      <li><span>imdb Rating: </span><%=@res_db.imdbrating%></li>
+    </ul>
+  </div>
+
+</div>
+
+ <p><a href = "/">go back to seach page</a></p>
