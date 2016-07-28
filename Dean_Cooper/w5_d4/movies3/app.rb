@@ -21,12 +21,21 @@ get '/index' do
   erb :index #matches the file name
 end
 
+get '/noresults' do
+  erb :noresults #matches the file name
+end
+
+
 get '/results' do
   title = params["movieName"].strip.downcase
   result = HTTParty.get("http://omdbapi.com/?s=#{title}" )
   @movies = result["Search"]
 
-  if (@movies.count == 1)
+  if (@movies == nil)
+    #return erb :noresults
+    redirect to '/noresults'
+
+  elsif (@movies.count == 1)
     redirect to "/detail/#{@movies[0]['imdbID']}"
   else
     erb :results #matches the file name

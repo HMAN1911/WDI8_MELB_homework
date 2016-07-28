@@ -35,11 +35,13 @@ td {
 .resultsHeader {
   text-align: center;
 }
-.resultsHeader a {
+a {
   color: white;
 }
 
-
+.homeLink {
+  display: inline-block;
+}
 /*# LET SAM KNOW BY TOMORROW NIGHT..*/
 
 .resultsContent img {
@@ -68,6 +70,7 @@ button {
   background-color: brown;
   border-color: 2px solid black;
   font-size: 1em;
+  color: white;
 }
 
 img {

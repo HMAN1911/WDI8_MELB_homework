@@ -22,7 +22,6 @@ def mapAndSaveMovie(omdbMovieObject)
   arMovie.imdbrating =  omdbMovieObject['imdbRating']
   arMovie.imdbvotes = omdbMovieObject['imdbVotes']
   arMovie.imdbid = omdbMovieObject['imdbID']
-  arMovie.type =  omdbMovieObject['type']
   arMovie.save
 
 end
