@@ -9,6 +9,7 @@ require_relative 'models/movie'
 
 def save_mv_db(path)
   @res_db = Movie.new
+  # binding.pry
   @res_db.title = path["Title"]
   @res_db.year = path["Year"]
   @res_db.released = path["Released"]
@@ -20,14 +21,13 @@ def save_mv_db(path)
   @res_db.poster = path['Poster']
   @res_db.imdbrating = path["imdbRating"]
   @res_db.imdbid = path["imdbID"]
-  # @res_db.save
+  @res_db.save
 end
 
 
 
 
 get '/' do
-  # 'hi there'
   erb :index
 end
 
@@ -61,12 +61,10 @@ get '/multiple_result' do
 
 
     elsif Movie.find_by(imdbid: results["Search"][0]["imdbID"]) == nil
+
       result_omdb = HTTParty.get("http://omdbapi.com/?i=#{results["Search"][0]["imdbID"]}")
-
       save_mv_db(result_omdb)
-      # @res_db.save
-
-       erb :movies_search
+      erb :movies_search
 
     end
 end
@@ -80,14 +78,9 @@ get '/movies_search' do
 
   if Movie.find_by(imdbid: imdbid_db) != nil
     @res_db = Movie.find_by(imdbid: imdbid_db)
-    # binding.pry
-    # puts 'sthwrg'
 
   else
     save_mv_db(result_omdb)
-    # binding.pry
-    # puts 'sth wrong'
-    # @res_db.save
 
   end
   erb :movies_search
