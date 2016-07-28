@@ -1,0 +1,10 @@
+
+
+<% @search.each do |film| %>
+  <a href="http://www.omdbapi.com"> <h3><%= film["Title"] %></h3> </a>
+  <img src="<%= film["Poster"] %>">
+<% end %>
+
+
+
+<!-- <%= film["Title"] -->

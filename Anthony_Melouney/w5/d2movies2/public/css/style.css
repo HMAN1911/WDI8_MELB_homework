@@ -1,0 +1,28 @@
+body {
+  text-align: center;
+  background-color: #000000;
+  /*background: url(http://wall--art.com/wp-content/uploads/2014/10/hollywood-hills-wallpaper.jpg);
+  background-size: 100%;
+  background-repeat: repeat-y;*/
+}
+
+h1 {
+  color: #CEFF4C;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 14;
+}
+
+h3 {
+  color: #CEFF4C;
+  font-family: 'Ubuntu', sans-serif;}
+
+ul {
+  list-style: none;
+  color: #CEFF4C;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 12;
+}
+
+button {
+  color: #CEFF4C;
+}
