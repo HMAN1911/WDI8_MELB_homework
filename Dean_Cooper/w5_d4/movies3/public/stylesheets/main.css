@@ -1,0 +1,77 @@
+body {
+  width: 80%;
+  margin: 0 auto;
+  background-image: url("https://timsfilmreviews.files.wordpress.com/2013/03/predator-dutches-team-2.jpg");
+}
+
+h1 {
+  color: white;
+}
+#singleMovie {
+  display: block;
+  margin: 0 auto;
+  width: 300px;
+}
+
+.header {
+  width: 25%;
+}
+
+td {
+  color: white
+}
+.detail {
+  width: 60%;
+}
+
+.results, .resultsHeader, .resultsContent {
+  width : 200px;
+}
+
+.results {
+  margin: 10px;
+}
+
+.resultsHeader {
+  text-align: center;
+}
+.resultsHeader a {
+  color: white;
+}
+
+
+/*# LET SAM KNOW BY TOMORROW NIGHT..*/
+
+.resultsContent img {
+  display: block;
+  margin: 0 auto;
+  height: 200px;
+}
+
+
+label {
+  color: white;
+}
+input {
+    height: 25px;
+    font-size: 1em;
+}
+
+.results {
+  display: inline-block;
+  /*border: 1px solid red;*/
+}
+
+button {
+  width: 100px;
+  height: 30px;
+  background-color: brown;
+  border-color: 2px solid black;
+  font-size: 1em;
+}
+
+img {
+  width: 150px;
+}
+
+/*display: inline-block*/

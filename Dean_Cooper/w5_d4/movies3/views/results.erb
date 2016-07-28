@@ -1,0 +1,15 @@
+
+
+<% @movies.each do |movie| %>
+  <div class="results">
+    <div class="resultsHeader">
+      <a href="/detail/<%= movie["imdbID"] %>">
+        <%= movie["Title"] %> </a>
+    </div>
+
+    <div class="resultsContent">
+      <img src="<%= movie["Poster"]%>" alt="">
+    </div>
+
+  </div>
+<% end %>

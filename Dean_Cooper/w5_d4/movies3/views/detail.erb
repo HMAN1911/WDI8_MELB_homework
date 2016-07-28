@@ -1,0 +1,26 @@
+<p> <%= @movieTitle %></p>
+
+<div id="results">
+<table>
+  <tr>
+    <td class="header">Title :</td>
+    <td class="detail"><%=@searchResult["title"]%> </td>
+  </tr>
+  <tr>
+    <td>Plot :</td>
+    <td><%=@searchResult["plot"]%> </td>
+  </tr>  <tr>
+      <td>Actors :</td>
+      <td><%=@searchResult["actors"]%> </td>
+    </tr>  <tr>
+        <td>Director :</td>
+        <td><%=@searchResult["director"]%> </td>
+      </tr>  <tr>
+          <td>Awards :</td>
+          <td><%=@searchResult["awards"]%> </td>
+        </tr>
+</table>
+
+<img id="singleMovie" src="<%=@searchResult["poster"]%>"> </img>
+
+</div>

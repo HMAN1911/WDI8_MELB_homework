@@ -1,0 +1,50 @@
+<div>
+  <% @result_list.each do |list|%>
+      <p><a id="movieLink" href="/movies?multiple_results=<%= list["Title"] %>">
+      <%= list["Title"] %> </a></p>
+  <% end %>
+</div>
+
+
+
+
+
+<%@search_returns.each do |movie| %>
+  <div class = "results">
+    <a href="/about?title=<%= movie["Title"].downcase %>"> <%= movie["Title"] %> </a>
+    <img src="<%= movie["Poster"]%>" alt="">
+  </div>
+<% end %>
+
+
+
+
+<!--
+<div>
+  <% @result_list.each do |list|%>
+      <p><a id="movieLink" href="/movies?multiple_results=<%= list["Title"] %>">
+      <%= list["Title"] %> </a></p>
+  <% end %>
+</div>
+
+<div id="results">
+
+<div class="result">Title : <%=@searchResult["Title"]%> </div>
+<div class="result">Plot : <%=@plot%> </div>
+<div class="result">Actors : <%=@actors%> </div>
+<div class="result">Director : <%=@director%> </div>
+<div class="result">Awards : <%=@awards%> </div>
+
+
+<img src="<%=@imageUrl%>"> </img>
+
+</div>
+@title
+@plot
+@actors
+@director
+@awards
+
+
+
+ -->
