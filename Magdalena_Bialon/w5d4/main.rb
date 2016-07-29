@@ -55,15 +55,15 @@ get '/multiple_result' do
       erb :multiple_result
 
 
-    elsif Movie.find_by(imdbid: results["Search"][0]["imdbID"]) != nil
-      @result = Movie.find_by(imdbid: results["Search"][0]["imdbID"])
-      erb :movies_search
+    # elsif Movie.find_by(imdbid: results["Search"][0]["imdbID"]) != nil
+    #   @result = Movie.find_by(imdbid: results["Search"][0]["imdbID"])
+    #   erb :movies_search
 
 
     elsif Movie.find_by(imdbid: results["Search"][0]["imdbID"]) == nil
 
-      result_omdb = HTTParty.get("http://omdbapi.com/?i=#{results["Search"][0]["imdbID"]}")
-      save_mv_db(result_omdb)
+      # result_omdb = HTTParty.get("http://omdbapi.com/?i=#{results["Search"][0]["imdbID"]}")
+      # save_mv_db(result_omdb)
       erb :movies_search
 
     end

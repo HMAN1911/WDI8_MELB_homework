@@ -3,11 +3,11 @@
    <div class="list_item">
 
 
-     <a href="/movies_search?imdbid=<%= list["imdbID"] %>"> <%= list["Title"] %> </a>
+     <a id = "title_m" href="/movies_search?imdbid=<%= list["imdbID"] %>"> <%= list["Title"] %> </a>
 
      <p><%= list['Year'] %></p>
 
-     <a href = "/movies_search?imdbid=<%= list["imdbID"]%>"><img src="<%= list['Poster'] %>" ></a>
+     <a  href = "/movies_search?imdbid=<%= list["imdbID"]%>"><img id = 'poster_m' src="<%= list['Poster'] %>" ></a>
 
 
    </div>
