@@ -54,16 +54,13 @@ get '/multiple_result' do
       @list_movies = results["Search"]
       erb :multiple_result
 
-
-    # elsif Movie.find_by(imdbid: results["Search"][0]["imdbID"]) != nil
-    #   @result = Movie.find_by(imdbid: results["Search"][0]["imdbID"])
-    #   erb :movies_search
+    elsif results["Search"].length == 1
+    #  result_omdb = HTTParty.get("http://www.omdbapi.com/?i=#{imdbid_db}")
+    #  save_mv_db(result_omdb)
+     redirect to "/movies_search?imdbid=#{multiple_result}"
 
 
     elsif Movie.find_by(imdbid: results["Search"][0]["imdbID"]) == nil
-
-      # result_omdb = HTTParty.get("http://omdbapi.com/?i=#{results["Search"][0]["imdbID"]}")
-      # save_mv_db(result_omdb)
       erb :movies_search
 
     end
@@ -72,12 +69,19 @@ end
 
 
 get '/movies_search' do
-
   imdbid_db = params["imdbid"]
+  # imdbid_db = params["multiple_result"]
+  # result_omdb = HTTParty.get("http://www.omdbapi.com/?t=#{imdbid_db}")
+
   result_omdb = HTTParty.get("http://www.omdbapi.com/?i=#{imdbid_db}")
+  # binding.pry
 
   if Movie.find_by(imdbid: imdbid_db) != nil
     @res_db = Movie.find_by(imdbid: imdbid_db)
+
+      if @res_db.poster == "N/A"
+        @res_db.poster = "http://clipartix.com/wp-content/uploads/2016/06/Movie-reel-film-reel-clipart.jpeg"
+      end
 
   else
     save_mv_db(result_omdb)
