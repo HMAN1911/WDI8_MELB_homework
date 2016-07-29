@@ -50,7 +50,6 @@ post '/dishes' do
     redirect to '/session/new'
   end
 
-
     @dish = Dish.new
     @dish.name = params[:name]
     @dish.img_url = params[:img_url]
@@ -79,8 +78,8 @@ end
 
 
 put '/dishes/:id' do
-  dis = Dish.find(params[:id])
-  dis.update(name: params[:name], img_url: params[:img_url])
+  @dish = Dish.find(params[:id])
+  @dish.update(name: params[:name], img_url: params[:img_url])
   redirect to "/dishes/#{params[:id]}"
 end
 
@@ -88,7 +87,7 @@ end
 
 
 # ***
-post '/dishes/:id/comment' do
+post '/dishes/:id' do
 
   @comment = Comment.new
   @comment.post = params[:comment]
@@ -100,14 +99,24 @@ post '/dishes/:id/comment' do
   @all_comments = @dish.comments.all
   erb :show
 
-  # if !@comment
-  #   @comment  = []
-  # end
-  # 'comment my dish'
-  # erb :comment
 end
 
 
+put '/dishes/:id/update_comment' do
+    # binding.pry
+  @comment = Comment.where(dish_id: params[:id], id: params[:id])
+  @comment.update(post: params[:post])
+  redirect back
+end
+
+# <input type="text" name = "comment" value ="<%= @comment.post %>">
+
+
+delete '/dishes/delete/:id' do
+  @comment = Comment.find(params[:id])
+  @comment.destroy
+  redirect back
+end
 # ***
 
 

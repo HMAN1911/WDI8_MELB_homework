@@ -7,11 +7,13 @@
 </head>
 <body>
 
+  <h1><a href="/">Go to main page</a></h1>
+
      <%if logged_in?%>
      <h1>Hello <%= current_user.email %></h1>
 
      <a href="/my_dishes">my dishes</a>
-     
+
        <form action="/session" method = "post">
          <input type="hidden" name ="_method" value = 'delete'>
          <button>logout</button>
