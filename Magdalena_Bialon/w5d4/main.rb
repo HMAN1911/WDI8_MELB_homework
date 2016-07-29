@@ -80,7 +80,7 @@ get '/movies_search' do
     @res_db = Movie.find_by(imdbid: imdbid_db)
 
       if @res_db.poster == "N/A"
-        @res_db.poster = "http://clipartix.com/wp-content/uploads/2016/06/Movie-reel-film-reel-clipart.jpeg"
+        @res_db.poster = "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcREHHyUplSfE-vwDCTi8Sj-UrCgM_pjch66aPSgeXZ9DPvvOE1i"
       end
 
   else
