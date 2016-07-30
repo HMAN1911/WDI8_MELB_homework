@@ -87,6 +87,11 @@ end
 
 
 # ***
+get '/dishes/:id/edit' do
+  @dish = Dish.find(params[:id])
+  erb :edit
+end
+
 post '/dishes/:id' do
 
   @comment = Comment.new
@@ -101,15 +106,30 @@ post '/dishes/:id' do
 
 end
 
+# TO EDIT COMMENT - HARD AS WHEN DISH USER - CURRENT USER -session
+# HERE HARD TO DESCRIBE RELATION COMMENT - CURRENT DISH :(
 
-put '/dishes/:id/update_comment' do
-    # binding.pry
-  @comment = Comment.where(dish_id: params[:id], id: params[:id])
-  @comment.update(post: params[:post])
-  redirect back
-end
+# get '/dishes/update_comment/:id' do
+#   # @comment = Comment.where(dish_id: params[:id], id: params[:id])
+#   @comment = Comment.find(params[:id])
+#   erb :show
+# end
+#
+# put '/dishes/update_comment/:id' do
+#   # @comment = Comment.where(dish_id: params[:id], id: params[:id])
+#   @comment = Comment.find(params[:id])
+#   @comment.update(post: params[:post])
+#   redirect back
+# end
 
-# <input type="text" name = "comment" value ="<%= @comment.post %>">
+# NOT this one : <form action="/dishes/<%= @dish.id %>/update_comment" method = "post">
+#<form action="/dishes/update_comment/<%= comment.id %>" method = "post">
+#   <input type="hidden" name="_method" value="put">
+#     <input type="text" name = "comment" value ="<%= @comment.post %>">
+#   <button id = "delete">edit comment</button>
+# </form>
+
+
 
 
 delete '/dishes/delete/:id' do

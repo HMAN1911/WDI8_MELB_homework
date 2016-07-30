@@ -31,12 +31,6 @@
 
   <p> <%= comment.post %> </p>
 
-  <form action="/dishes/<%= comment.id %>/update_comment" method = "post">
-    <input type="hidden" name="_method" value="put">
-      <input type="text" name = "comment" value ="<%= @comment %>">
-    <button id = "delete">edit comment</button>
-  </form>
-
   <form action="/dishes/delete/<%= comment.id %>" method = "post">
     <input type="hidden" name = "_method" value ="delete">
     <button id = "delete">delete comment</button>
