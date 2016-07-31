@@ -39,6 +39,8 @@ end
 
 
 
+
+
 get '/multiple_result' do
 
     multiple_result = params["multiple_result"]
@@ -55,32 +57,29 @@ get '/multiple_result' do
       erb :multiple_result
 
     elsif results["Search"].length == 1
+    # THERE IS A BUG STILL HERE - SHOWING ONLY ONE TITLE  CHECK ?i=.. or ?t=
     #  result_omdb = HTTParty.get("http://www.omdbapi.com/?i=#{imdbid_db}")
     #  save_mv_db(result_omdb)
-     redirect to "/movies_search?imdbid=#{multiple_result}"
+    redirect to "/movies_search?multiple_result=#{multiple_result}"
 
 
     elsif Movie.find_by(imdbid: results["Search"][0]["imdbID"]) == nil
-      erb :movies_search
+       erb :movies_search
 
     end
 end
 
 
-
 get '/movies_search' do
-  imdbid_db = params["imdbid"]
-  # imdbid_db = params["multiple_result"]
-  # result_omdb = HTTParty.get("http://www.omdbapi.com/?t=#{imdbid_db}")
 
+  imdbid_db = params["imdbid"]
   result_omdb = HTTParty.get("http://www.omdbapi.com/?i=#{imdbid_db}")
-  # binding.pry
 
   if Movie.find_by(imdbid: imdbid_db) != nil
     @res_db = Movie.find_by(imdbid: imdbid_db)
 
-      if @res_db.poster == "N/A"
-        @res_db.poster = "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcREHHyUplSfE-vwDCTi8Sj-UrCgM_pjch66aPSgeXZ9DPvvOE1i"
+      if @res_db.poster == "N/A"        #path['Poster']
+        @res_db.poster = "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQ1F-vfVdphuJ7pT9VuWxbGNtBEUZ64bZiQrcDXY8vi8VBlx-rd"
       end
 
   else
