@@ -176,7 +176,7 @@ end
 
 
 get '/my_dishes' do
-  # @dishes = Dish.where(user_id: current_user.id)
+
   @dishes = current_user.dishes
 
   erb :my_dishes

@@ -10,8 +10,8 @@
 
 <% @dishes.each  do |dish| %>
 
-  <h2> <a href="/dishes/<%= dish["id"] %>"> <%= dish["name"] %> </a> </h2>
+  <h2> <a href="/dishes/<%= dish.id %>"> <%= dish.name %> </a> </h2>
 
-  <a href="/dishes/<%= dish["id"] %>"> <img src = " <%= dish["img_url"] %> "> </a>
+  <a href="/dishes/<%= dish.id %>"> <img src = " <%= dish.img_url %> "> </a>
 
 <% end %>
