@@ -1,0 +1,40 @@
+<h1>THE DISH</h1>
+
+<h2>  <%= @dish.name %> </h2>
+
+<img src = " <%= @dish.img_url %> ">
+
+
+<a href="/dishes/<%= @dish.id %>/edit"> edit </a>
+<br>
+
+
+
+
+<form action="/dishes/<%= @dish.id %>" method = "post">
+  <input type="hidden" name = "_method" value ="delete">
+  <button>delete dish</button>
+</form>
+
+
+
+
+<form action="/dishes/<%= @dish.id %>" method="post">
+  <input type="text" maxlength='400'  name = "comment" >
+  <button>Add comment</button>
+</form>
+
+
+
+
+<% @all_comments.each do |comment| %>
+
+  <p> <%= comment.post %> </p>
+
+  <form action="/dishes/delete/<%= comment.id %>" method = "post">
+    <input type="hidden" name = "_method" value ="delete">
+    <button id = "delete">delete comment</button>
+  </form>
+
+
+<% end %>

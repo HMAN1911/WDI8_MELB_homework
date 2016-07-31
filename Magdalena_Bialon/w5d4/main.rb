@@ -9,6 +9,7 @@ require_relative 'models/movie'
 
 def save_mv_db(path)
   @res_db = Movie.new
+  # binding.pry
   @res_db.title = path["Title"]
   @res_db.year = path["Year"]
   @res_db.released = path["Released"]
@@ -20,14 +21,13 @@ def save_mv_db(path)
   @res_db.poster = path['Poster']
   @res_db.imdbrating = path["imdbRating"]
   @res_db.imdbid = path["imdbID"]
-  # @res_db.save
+  @res_db.save
 end
 
 
 
 
 get '/' do
-  # 'hi there'
   erb :index
 end
 
@@ -36,6 +36,8 @@ end
 get '/about' do
    erb :about
 end
+
+
 
 
 
@@ -54,23 +56,18 @@ get '/multiple_result' do
       @list_movies = results["Search"]
       erb :multiple_result
 
-
-    elsif Movie.find_by(imdbid: results["Search"][0]["imdbID"]) != nil
-      @result = Movie.find_by(imdbid: results["Search"][0]["imdbID"])
-      erb :movies_search
+    elsif results["Search"].length == 1
+    # THERE IS A BUG STILL HERE - SHOWING ONLY ONE TITLE  CHECK ?i=.. or ?t=
+    #  result_omdb = HTTParty.get("http://www.omdbapi.com/?i=#{imdbid_db}")
+    #  save_mv_db(result_omdb)
+    redirect to "/movies_search?multiple_result=#{multiple_result}"
 
 
     elsif Movie.find_by(imdbid: results["Search"][0]["imdbID"]) == nil
-      result_omdb = HTTParty.get("http://omdbapi.com/?i=#{results["Search"][0]["imdbID"]}")
-
-      save_mv_db(result_omdb)
-      # @res_db.save
-
        erb :movies_search
 
     end
 end
-
 
 
 get '/movies_search' do
@@ -80,14 +77,13 @@ get '/movies_search' do
 
   if Movie.find_by(imdbid: imdbid_db) != nil
     @res_db = Movie.find_by(imdbid: imdbid_db)
-    # binding.pry
-    # puts 'sthwrg'
+
+      if @res_db.poster == "N/A"        #path['Poster']
+        @res_db.poster = "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQ1F-vfVdphuJ7pT9VuWxbGNtBEUZ64bZiQrcDXY8vi8VBlx-rd"
+      end
 
   else
     save_mv_db(result_omdb)
-    # binding.pry
-    # puts 'sth wrong'
-    # @res_db.save
 
   end
   erb :movies_search
