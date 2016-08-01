@@ -13,12 +13,13 @@
   <p>Awards: <%=@awards%></p>
   <p>IMDB Rating: <%=@imdb_rating%></p>
   <p class="not_exist"><%="That movie does not exist in our database" if @res == "False"%></p>
-  <form action="/movie" method="get">
+  <form action="/list" method="get">
     <label for="movie_name"></label>
     <input type="text" id="movie_name" name="movie_name">
     <button>Search</button>
   </form>
-  <a href="/about">About</a>
+  <form action=<%="/list"%> method="get">
+  <a href="/">Home</a><a href="/about">About</a>
 </div>
 
 <div class="right">
