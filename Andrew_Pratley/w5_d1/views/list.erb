@@ -1,14 +1,14 @@
 
   <% @titles.each do |movie| %>
 
-  <form action=<%="/movie"%> method="get">
-    <a href="/movie">
+    <a href="/movie?imdb_id=<%= movie['imdbID'] %>">
       <div class="selection">
         <p class="sel-text">Title: <%= movie['Title'] %></p>
         <p class="sel-text">Year: <%= movie['Year'] %></p>
         <img class="thumb" src="<%= movie['Poster'] %>" alt="poster">
       </div>
     </a>
-  </form>
 
   <% end %>
+
+  <a href="/">Home</a><a href="/about">About</a>
