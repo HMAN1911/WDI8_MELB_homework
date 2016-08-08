@@ -1,3 +1,3 @@
 class Movie < ActiveRecord::Base
-  validates :title, presence:true, allow_blank: false
+  validates :name, presence:true, allow_blank: false 
 end
