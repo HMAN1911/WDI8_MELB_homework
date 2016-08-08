@@ -1,6 +1,6 @@
 create database automobiles;
 
-/c automobiles
+\c automobiles
 
 create table cars(
   id serial4 primary key,
