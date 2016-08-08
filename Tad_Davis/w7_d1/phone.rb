@@ -24,11 +24,11 @@ def area_code
     return number[0..2]
 end
 
-
+=begin
 def pretty_print
 
-  return number 
+  number 
 
-end
+end=end
 
 end #end of class
