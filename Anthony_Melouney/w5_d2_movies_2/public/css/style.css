@@ -6,23 +6,26 @@ body {
   background-repeat: repeat-y;*/
 }
 
-h1 {
+a, h1, h3, ul, img, button {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  text-align: center;
   color: #CEFF4C;
   font-family: 'Ubuntu', sans-serif;
+}
+
+h1 {
   font-size: 14;
 }
 
-h3 {
-  color: #CEFF4C;
-  font-family: 'Ubuntu', sans-serif;}
-
-ul {
-  list-style: none;
-  color: #CEFF4C;
-  font-family: 'Ubuntu', sans-serif;
+a, h3, ul {
   font-size: 12;
 }
 
 button {
-  color: #CEFF4C;
+  font-size: 10;
+}
+
+ul {
+  list-style: none;
 }
