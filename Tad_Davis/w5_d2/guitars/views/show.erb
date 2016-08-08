@@ -6,6 +6,8 @@
 
 <a href="/guitars/<%= @guitar['id'] %>/edit">edit</a>
 
+<!--This form deletes -->
+
 <form action="/guitars/<%= @guitar['id'] %>" method="post">
   <input type="hidden" name="_method" value="delete">
   <button>delete</button>

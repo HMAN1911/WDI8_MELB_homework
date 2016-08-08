@@ -28,8 +28,17 @@
 <a href="/">back</a>
 <span id="poster"><img src="<%= @searchResult['Poster'] %>" alt=""></span>
 
-
 </div>
+
+<!-- CREATE A FORM TO SAVE TO DATABASE-->
+
+<!-- Where am i saving to if its meant to save to 
+the database i dont understand the form -->
+
+<form action="/display/<%= @searchResult['imdbID'] %>" method="post">
+	<button>Save movie</button>
+</form>
+
 
 </body>
 </html>
