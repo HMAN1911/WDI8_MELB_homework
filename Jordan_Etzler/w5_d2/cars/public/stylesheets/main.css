@@ -21,7 +21,6 @@ body {
   width: 25%;
   overflow: hidden;
   position: relative;
-  -webkit-transition: width 1.3s;
   transition: width 1.3s;
 }
 

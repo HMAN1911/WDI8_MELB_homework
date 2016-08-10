@@ -3,6 +3,9 @@ require 'sinatra/reloader'
 require 'pry'
 require 'httparty'
 
+require_relative 'db_config'
+require_relative 'models/movie'
+
 get '/' do
   erb :index
 end
@@ -14,9 +17,8 @@ get '/list' do
   #   redirect "/about"
   # end
 
-  # OMDB Api Query for multiple titles
-  title_list = params['title'].gsub(/\s+/, "+").strip.downcase
-  database_return_list = HTTParty.get("http://www.omdbapi.com/?s=#{ title_list }")
+  title = params['title'].gsub(/\s+/, "+").strip.downcase
+  database_return_list = HTTParty.get("http://www.omdbapi.com/?s=#{ title }")
 
   @list_movies = database_return_list['Search']
 
@@ -26,6 +28,14 @@ end
 get '/about' do
 
   title = params['title'].gsub(/\s+/, "+").strip.downcase
+
+  movie = Movie.new
+  movie.name = params[:name]
+  dish.image_url = params[:image_url]
+  dish.save
+
+
+
   database_return = HTTParty.get("http://www.omdbapi.com/?t=#{ title }")
 
   @movie_title = database_return['Title']
